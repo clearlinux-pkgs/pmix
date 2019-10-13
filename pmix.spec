@@ -4,7 +4,7 @@
 #
 Name     : pmix
 Version  : 3.1.4
-Release  : 2
+Release  : 3
 URL      : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Source0  : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Summary  : An extended/exascale implementation of PMI
