@@ -1,9 +1,10 @@
 libc.so.6
 libdl.so.2
-libevent-2.1.so.6
-libevent_pthreads-2.1.so.6
+libevent-2.1.so.7
+libevent_pthreads-2.1.so.7
 libhwloc.so.15
 libm.so.6
+libmunge.so.2
 libpthread.so.0
 libutil.so.1
 libz.so.1

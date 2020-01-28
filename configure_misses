@@ -65,5 +65,3 @@ Configure miss: psm2.h
 Configure miss: if opamgt requested
 Configure miss: if MCA component pnet:opa can compile
 Configure miss: if MCA component psec:dummy_handshake can compile
-Configure miss: will munge support be built
-Configure miss: if MCA component psec:munge can compile

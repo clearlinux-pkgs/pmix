@@ -4,3 +4,5 @@ libevent-dev
 hwloc-dev
 perl
 Cython
+munge-dev
+

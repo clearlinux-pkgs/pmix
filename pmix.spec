@@ -4,7 +4,7 @@
 #
 Name     : pmix
 Version  : 3.1.4
-Release  : 4
+Release  : 6
 URL      : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Source0  : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Summary  : An extended/exascale implementation of PMI
@@ -18,6 +18,7 @@ BuildRequires : Cython
 BuildRequires : flex
 BuildRequires : hwloc-dev
 BuildRequires : libevent-dev
+BuildRequires : munge-dev
 BuildRequires : perl
 BuildRequires : pkgconfig(zlib)
 
@@ -91,16 +92,18 @@ license components for the pmix package.
 
 %prep
 %setup -q -n pmix-3.1.4
+cd %{_builddir}/pmix-3.1.4
 
 %build
 ## build_prepend content
 ./autogen.pl
+
 ## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568042572
+export SOURCE_DATE_EPOCH=1580231484
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -109,7 +112,8 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-%autogen --disable-static --enable-pmi-backward-compatibility
+%autogen --disable-static --enable-pmi-backward-compatibility \
+--with-munge
 make  %{?_smp_mflags}
 
 %check
@@ -120,14 +124,15 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1568042572
+export SOURCE_DATE_EPOCH=1580231484
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pmix
-cp LICENSE %{buildroot}/usr/share/package-licenses/pmix/LICENSE
+cp %{_builddir}/pmix-3.1.4/LICENSE %{buildroot}/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d
 %make_install
 ## install_append content
 mkdir -p %{buildroot}/usr/share/defaults/etc/%{name}/
 cp -r %{buildroot}/etc/* %{buildroot}/usr/share/defaults/etc/%{name}/
+
 ## install_append end
 
 %files
@@ -167,19 +172,19 @@ cp -r %{buildroot}/etc/* %{buildroot}/usr/share/defaults/etc/%{name}/
 /usr/include/pmix_server.h
 /usr/include/pmix_tool.h
 /usr/include/pmix_version.h
-/usr/lib64/libmca_common_dstore.so
-/usr/lib64/libpmi.so
-/usr/lib64/libpmi2.so
-/usr/lib64/libpmix.so
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/libmca_common_dstore.so
 /usr/lib64/libmca_common_dstore.so.1
 /usr/lib64/libmca_common_dstore.so.1.0.1
+/usr/lib64/libpmi.so
 /usr/lib64/libpmi.so.1
 /usr/lib64/libpmi.so.1.0.1
+/usr/lib64/libpmi2.so
 /usr/lib64/libpmi2.so.1
 /usr/lib64/libpmi2.so.1.0.0
+/usr/lib64/libpmix.so
 /usr/lib64/libpmix.so.2
 /usr/lib64/libpmix.so.2.2.24
 /usr/lib64/pmix/mca_bfrops_v12.so
@@ -195,6 +200,7 @@ cp -r %{buildroot}/etc/* %{buildroot}/usr/share/defaults/etc/%{name}/
 /usr/lib64/pmix/mca_pnet_tcp.so
 /usr/lib64/pmix/mca_pnet_test.so
 /usr/lib64/pmix/mca_preg_native.so
+/usr/lib64/pmix/mca_psec_munge.so
 /usr/lib64/pmix/mca_psec_native.so
 /usr/lib64/pmix/mca_psec_none.so
 /usr/lib64/pmix/mca_psensor_file.so
@@ -205,4 +211,4 @@ cp -r %{buildroot}/etc/* %{buildroot}/usr/share/defaults/etc/%{name}/
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pmix/LICENSE
+/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d
