@@ -3,6 +3,6 @@
 libevent-dev
 hwloc-dev
 perl
-Cython
+pypi-cython
 munge-dev
 

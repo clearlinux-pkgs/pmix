@@ -4,23 +4,23 @@
 #
 Name     : pmix
 Version  : 3.1.4
-Release  : 6
+Release  : 7
 URL      : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Source0  : https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
 Summary  : An extended/exascale implementation of PMI
 Group    : Development/Tools
-License  : Intel
+License  : BSD-3-Clause
 Requires: pmix-bin = %{version}-%{release}
 Requires: pmix-data = %{version}-%{release}
 Requires: pmix-lib = %{version}-%{release}
 Requires: pmix-license = %{version}-%{release}
-BuildRequires : Cython
 BuildRequires : flex
 BuildRequires : hwloc-dev
 BuildRequires : libevent-dev
 BuildRequires : munge-dev
 BuildRequires : perl
 BuildRequires : pkgconfig(zlib)
+BuildRequires : pypi-cython
 
 %description
 The Process Management Interface (PMI) has been used for quite some time as a
@@ -91,8 +91,8 @@ license components for the pmix package.
 
 
 %prep
-%setup -q -n pmix-3.1.4
-cd %{_builddir}/pmix-3.1.4
+%setup -q -n openpmix-3.1.4
+cd %{_builddir}/openpmix-3.1.4
 
 %build
 ## build_prepend content
@@ -103,31 +103,24 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580231484
+export SOURCE_DATE_EPOCH=1643411476
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %autogen --disable-static --enable-pmi-backward-compatibility \
 --with-munge
 make  %{?_smp_mflags}
 
-%check
-export LANG=C.UTF-8
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
-
 %install
-export SOURCE_DATE_EPOCH=1580231484
+export SOURCE_DATE_EPOCH=1643411476
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pmix
-cp %{_builddir}/pmix-3.1.4/LICENSE %{buildroot}/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d
+cp %{_builddir}/openpmix-3.1.4/LICENSE %{buildroot}/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d
 %make_install
 ## install_append content
 mkdir -p %{buildroot}/usr/share/defaults/etc/%{name}/
