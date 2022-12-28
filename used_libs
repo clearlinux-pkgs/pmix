@@ -1,5 +1,5 @@
 libc.so.6
-libevent-2.1.so.7
+libevent_core-2.1.so.7
 libevent_pthreads-2.1.so.7
 libhwloc.so.15
 libm.so.6

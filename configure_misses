@@ -1,67 +1,57 @@
-Configure miss: if embedded mode is enabled
-Configure miss: if want developer-level compiler pickyness
-Configure miss: if want developer-level debugging code
-Configure miss: if want to install project-internal header files
-Configure miss: if want developer-level timing support
-Configure miss: if want build psec/dummy_handshake
-Configure miss: __NetBSD__
-Configure miss: __FreeBSD__
-Configure miss: __OpenBSD__
-Configure miss: __DragonFly__
-Configure miss: __386BSD__
-Configure miss: __bsdi__
-Configure miss: __APPLE__
-Configure miss: __sun__
-Configure miss: __sun
-Configure miss: symbol rename
-Configure miss: extra lib
-Configure miss: extra ltlib
-Configure miss: if gcc requires a flag for C11
-Configure miss: uint128_t
+Configure miss: ALPS support cle level unknown... checking for CRAY_ALPSLLI
 Configure miss: C bool type
-Configure miss: __attribute__(optnone)
-Configure miss: atomic_compare_exchange_strong_16
-Configure miss: atomic_compare_exchange_strong_16 with -mcx16
-Configure miss: atomic_compare_exchange_strong_16 with -latomic
-Configure miss: atomic_compare_exchange_strong_16
-Configure miss: atomic_compare_exchange_strong_16 with -mcx16
-Configure miss: atomic_compare_exchange_strong_16 with -latomic
-Configure miss: if .proc/endp is needed
-Configure miss: if .align directive takes logarithmic value
-Configure miss: net/uio.h usability
-Configure miss: net/uio.h presence
-Configure miss: net/uio.h
-Configure miss: ioLib.h usability
-Configure miss: ioLib.h presence
-Configure miss: ioLib.h
-Configure miss: sockLib.h usability
-Configure miss: sockLib.h presence
-Configure miss: sockLib.h
-Configure miss: hostLib.h usability
-Configure miss: hostLib.h presence
-Configure miss: hostLib.h
-Configure miss: ucred.h usability
-Configure miss: ucred.h presence
-Configure miss: ucred.h
-Configure miss: struct ucred.cr_uid
-Configure miss: struct sockpeercred.uid
-Configure miss: strncpy_s
-Configure miss: broken qsort
-Configure miss: if C compiler and POSIX threads work as is
-Configure miss: if C compiler and POSIX threads work with -Kthread
-Configure miss: if C compiler and POSIX threads work with -kthread
-Configure miss: if threads have different pids (pthreads on linux)
-Configure miss: will libev support be built
-Configure miss: which components should be static
-Configure miss: if MCA component pdl:plibltdl can compile
+Configure miss: CRAY_ALPS
+Configure miss: CRAY_ALPSUTIL
+Configure miss: CRAY_WLM_DETECT
+Configure miss: Jansson support available
 Configure miss: NetBSD, FreeBSD, OpenBSD, or DragonFly
+Configure miss: __386BSD__
+Configure miss: __APPLE__
+Configure miss: __DragonFly__
+Configure miss: __FreeBSD__
+Configure miss: __NetBSD__
+Configure miss: __OpenBSD__
+Configure miss: __attribute__(optnone)
+Configure miss: __bsdi__
+Configure miss: __sun
+Configure miss: __sun__
+Configure miss: gcc options needed to detect all undeclared functions
+Configure miss: hostLib.h
+Configure miss: htonl define
+Configure miss: if MCA component pdl:plibltdl can compile
 Configure miss: if MCA component pif:bsdx_ipv4 can compile
-Configure miss: some flavor of BSD
 Configure miss: if MCA component pif:bsdx_ipv6 can compile
 Configure miss: if MCA component pif:solaris_ipv6 can compile
-Configure miss: psm2.h usability
-Configure miss: psm2.h presence
-Configure miss: psm2.h
-Configure miss: if opamgt requested
-Configure miss: if MCA component pnet:opa can compile
+Configure miss: if MCA component pnet:nvd can compile
+Configure miss: if MCA component pnet:simptest can compile
+Configure miss: if MCA component pnet:sshot can compile
 Configure miss: if MCA component psec:dummy_handshake can compile
+Configure miss: if MCA component pstat:test can compile
+Configure miss: if dlopen pkg-config module exists
+Configure miss: if gcc  supports C11 _c11_atomic functions
+Configure miss: if gcc requires a flag for C11
+Configure miss: if libltdl pkg-config module exists
+Configure miss: if libtool needs -no-undefined flag to build shared libraries
+Configure miss: if threads have different pids (pthreads on linux)
+Configure miss: if want IPv6 support
+Configure miss: if want build psec/dummy_handshake
+Configure miss: if want developer-level compiler pickyness
+Configure miss: if want developer-level debugging code
+Configure miss: if want developer-level timing support
+Configure miss: if want install Python bindings
+Configure miss: if want memory sanitizers
+Configure miss: include CXI support
+Configure miss: ioLib.h
+Configure miss: libcurl support available
+Configure miss: net/uio.h
+Configure miss: sockLib.h
+Configure miss: some flavor of BSD
+Configure miss: static linker flag
+Configure miss: strncpy_s
+Configure miss: stropts.h
+Configure miss: struct sockpeercred.uid
+Configure miss: struct ucred.cr_uid
+Configure miss: sys/sysctl.h
+Configure miss: ucred.h
+Configure miss: uint128_t
+Configure miss: x86_64-generic-linux-gnu-file
