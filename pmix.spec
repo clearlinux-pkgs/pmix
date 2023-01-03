@@ -4,7 +4,7 @@
 #
 Name     : pmix
 Version  : 4.2.2
-Release  : 8
+Release  : 9
 URL      : https://github.com/pmix/pmix/archive/v4.2.2/pmix-4.2.2.tar.gz
 Source0  : https://github.com/pmix/pmix/archive/v4.2.2/pmix-4.2.2.tar.gz
 Summary  : An extended/exascale implementation of the PMIx Standard
@@ -24,6 +24,9 @@ BuildRequires : perl
 BuildRequires : pkgconfig(zlib)
 BuildRequires : pypi-cython
 BuildRequires : sed
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 The Process Management Interface (PMI) has been used for quite some time as a
@@ -102,24 +105,24 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1672194100
+export SOURCE_DATE_EPOCH=1672764754
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 %reconfigure --disable-static --enable-pmi-backward-compatibility \
 --with-munge
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1672194100
+export SOURCE_DATE_EPOCH=1672764754
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pmix
-cp %{_builddir}/openpmix-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d
+cp %{_builddir}/openpmix-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pmix/c0fb365dcaaae482fe7c3673c97d0e8c6d21636d || :
 %make_install
 ## install_append content
 mkdir -p %{buildroot}/usr/share/defaults/etc/%{name}/
