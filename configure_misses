@@ -47,7 +47,6 @@ Configure miss: if hwloc version is greater than 2.x
 Configure miss: if libltdl pkg-config module exists
 Configure miss: if libtool needs -no-undefined flag to build shared libraries
 Configure miss: if lustre pkg-config module exists
-Configure miss: if pre-built docs are available
 Configure miss: if static link flag supplied
 Configure miss: if threads have different pids (pthreads on linux)
 Configure miss: if want IPv6 support
