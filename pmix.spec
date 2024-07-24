@@ -7,7 +7,7 @@
 #
 Name     : pmix
 Version  : 5.0.3
-Release  : 12
+Release  : 13
 URL      : https://github.com/openpmix/openpmix/releases/download/v5.0.3/pmix-5.0.3.tar.gz
 Source0  : https://github.com/openpmix/openpmix/releases/download/v5.0.3/pmix-5.0.3.tar.gz
 Source1  : https://github.com/open-mpi/oac/archive/dfff67569fb72dbf8d73a1dcf74d091dad93f71b.tar.gz
