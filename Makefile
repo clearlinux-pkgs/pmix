@@ -1,5 +1,5 @@
 PKG_NAME := pmix
-URL = https://github.com/pmix/pmix/archive/v3.1.4/pmix-3.1.4.tar.gz
-ARCHIVES = 
+URL = https://github.com/openpmix/openpmix/releases/download/v5.0.3/pmix-5.0.3.tar.gz
+ARCHIVES = https://github.com/open-mpi/oac/archive/dfff67569fb72dbf8d73a1dcf74d091dad93f71b.tar.gz ./config/oac/
 
 include ../common/Makefile.common

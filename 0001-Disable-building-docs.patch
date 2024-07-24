@@ -1,0 +1,28 @@
+From 1e6fa743e951ccd2bc09dfe7bf3039d2081e9cf6 Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Wed, 24 Jul 2024 10:24:03 -0700
+Subject: [PATCH] Disable building docs
+
+Requires content we don't really want.
+
+Signed-off-by: William Douglas <william.douglas@intel.com>
+---
+ Makefile.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index d320f10..b463d6b 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -26,7 +26,7 @@
+ # via AC_CONFIG_MACRO_DIR in configure.ac.
+ ACLOCAL_AMFLAGS = -I ./config
+ 
+-SUBDIRS = config contrib include src etc bindings docs
++SUBDIRS = config contrib include src etc bindings
+ 
+ AM_DISTCHECK_CONFIGURE_FLAGS = --disable-dlopen
+ 
+-- 
+2.45.1
+

@@ -4,13 +4,15 @@ Configure miss: CRAY_ALPS
 Configure miss: CRAY_ALPSUTIL
 Configure miss: CRAY_WLM_DETECT
 Configure miss: Jansson support available
-Configure miss: NetBSD, FreeBSD, OpenBSD, or DragonFly
+Configure miss: NetBSD, FreeBSD, OpenBSD, Apple, or DragonFly
 Configure miss: __386BSD__
 Configure miss: __APPLE__
 Configure miss: __DragonFly__
 Configure miss: __FreeBSD__
 Configure miss: __NetBSD__
 Configure miss: __OpenBSD__
+Configure miss: __atomic_compare_exchange_n
+Configure miss: __atomic_compare_exchange_n with -mcx16
 Configure miss: __attribute__(optnone)
 Configure miss: __bsdi__
 Configure miss: __sun
@@ -19,19 +21,34 @@ Configure miss: gcc options needed to detect all undeclared functions
 Configure miss: hostLib.h
 Configure miss: htonl define
 Configure miss: if MCA component pdl:plibltdl can compile
+Configure miss: if MCA component pgpu:amd can compile
+Configure miss: if MCA component pgpu:intel can compile
+Configure miss: if MCA component pgpu:nvd can compile
 Configure miss: if MCA component pif:bsdx_ipv4 can compile
 Configure miss: if MCA component pif:bsdx_ipv6 can compile
+Configure miss: if MCA component pif:linux_ipv6 can compile
 Configure miss: if MCA component pif:solaris_ipv6 can compile
 Configure miss: if MCA component pnet:nvd can compile
 Configure miss: if MCA component pnet:simptest can compile
 Configure miss: if MCA component pnet:sshot can compile
+Configure miss: if MCA component pnet:tcp can compile
+Configure miss: if MCA component pnet:usnic can compile
+Configure miss: if MCA component prm:alps can compile
+Configure miss: if MCA component prm:hpesmf can compile
 Configure miss: if MCA component psec:dummy_handshake can compile
 Configure miss: if MCA component pstat:test can compile
+Configure miss: if MCA component pstrg:lustre can compile
+Configure miss: if __int128 atomic compare-and-swap is always lock-free
+Configure miss: if __sync_bool_compare_and_swap() gives correct results
 Configure miss: if dlopen pkg-config module exists
 Configure miss: if gcc  supports C11 _c11_atomic functions
 Configure miss: if gcc requires a flag for C11
+Configure miss: if hwloc version is greater than 2.x
 Configure miss: if libltdl pkg-config module exists
 Configure miss: if libtool needs -no-undefined flag to build shared libraries
+Configure miss: if lustre pkg-config module exists
+Configure miss: if pre-built docs are available
+Configure miss: if static link flag supplied
 Configure miss: if threads have different pids (pthreads on linux)
 Configure miss: if want IPv6 support
 Configure miss: if want build psec/dummy_handshake
@@ -40,13 +57,15 @@ Configure miss: if want developer-level debugging code
 Configure miss: if want developer-level timing support
 Configure miss: if want install Python bindings
 Configure miss: if want memory sanitizers
+Configure miss: if we are on Linux with TCP
 Configure miss: include CXI support
 Configure miss: ioLib.h
 Configure miss: libcurl support available
+Configure miss: lustre/lustreapi.h
 Configure miss: net/uio.h
+Configure miss: required Sphinx modules
 Configure miss: sockLib.h
 Configure miss: some flavor of BSD
-Configure miss: static linker flag
 Configure miss: strncpy_s
 Configure miss: stropts.h
 Configure miss: struct sockpeercred.uid

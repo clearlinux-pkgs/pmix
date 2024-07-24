@@ -1,5 +1,2 @@
 export HOSTNAME=buildhost
 export USER=builduser
-
-./autogen.pl
-
